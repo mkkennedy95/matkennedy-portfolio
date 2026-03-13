@@ -1,0 +1,247 @@
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  /* Colors */
+  --color-bg:        #0f0f0f;
+  --color-surface:   #1a1a1a;
+  --color-accent:    #4f8ef7;
+  --color-text:      #e8e8e8;
+  --color-muted:     #888888;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing scale */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+
+  /* Layout */
+  --max-width: 1100px;
+  --nav-height: 64px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 4px;
+  color: var(--color-accent);
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background-color: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav__links a {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.nav__links a:hover {
+  color: var(--color-text);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--nav-height);
+  gap: var(--space-sm);
+}
+
+.hero__heading {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero__sub {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about {
+  padding-block: var(--space-xl);
+}
+
+.about__content {
+  max-width: 640px;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   WORK
+   ============================================================ */
+.work {
+  padding-block: var(--space-xl);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Project card – populated via JS or manually */
+.project-card {
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  padding: var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.project-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.project-card__desc {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: var(--space-sm);
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  background-color: rgba(79, 142, 247, 0.12);
+  color: var(--color-accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.project-card__links {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.project-card__links a {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.project-card__links a:hover {
+  border-color: var(--color-accent);
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact {
+  padding-block: var(--space-xl);
+  color: var(--color-muted);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  padding-block: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .nav__links {
+    gap: var(--space-sm);
+  }
+}
