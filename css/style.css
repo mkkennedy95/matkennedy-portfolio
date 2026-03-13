@@ -537,6 +537,19 @@ body {
 }
 
 /* ============================================================
+   TK PLACEHOLDER MARKER (remove once all [TK] values are filled)
+   ============================================================ */
+mark.tk {
+  background: #ffecec;
+  color: #cc0000;
+  font-style: normal;
+  font-weight: 500;
+  padding: 0 0.2em;
+  border-radius: 2px;
+  outline: 1px solid #ffaaaa;
+}
+
+/* ============================================================
    PHOTO BLOCKS (placeholder zones for real assets)
    ============================================================ */
 .photo-block {
